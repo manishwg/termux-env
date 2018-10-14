@@ -25,9 +25,9 @@ if [ -d ~/bin ]; then
 	echo removing old 'bin' dir
 	rm -rf ~/.bash_aliases
 fi
-if [ -L ~/.bash_aliases ]; then
+if [ -L ~/bin ]; then
 	echo removing old 'bin' link
-	rm -rf ~/.bash_aliases
+	rm -f ~/bin
 fi
 
 cwd=$(pwd)
