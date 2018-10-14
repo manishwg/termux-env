@@ -20,4 +20,17 @@ ln -v ~/termux-env/.bash_aliases ~/
 
 chmod 774 ~/termux-env/bin
 chmod 775 ~/termux-env/bin/*
-ln -sv ~/termux-env/bin ~/
+
+if [ -d ~/bin ]; then
+	echo removing old 'bin' dir
+	rm -rf ~/.bash_aliases
+fi
+if [ -L ~/.bash_aliases ]; then
+	echo removing old 'bin' link
+	rm -rf ~/.bash_aliases
+fi
+
+cwd=$(pwd)
+cd ~
+ln -sv ./termux-env/bin ~/
+cd $cwd
