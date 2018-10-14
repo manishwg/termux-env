@@ -1,3 +1,23 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-wget https://github.com/manishwg/termux-env/raw/master/termux-env
+if [ -f ~/.bashrc ]; then
+	echo removing old '.bashrc'
+	rm -rf ~/.bashrc
+fi
+
+if [ -f ~/.bash_aliases ]; then
+	echo removing old '.bash_aliases'
+	rm -rf ~/.bash_aliases
+fi
+
+ln -v ~/termux-env/.bashrc ~/
+ln -v ~/termux-env/.bash_aliases ~/
+
+
+
+
+
+
+chmod 664 ~/termux-env/bin
+chmod 775 ~/termux-env/bin/*
+ln -sv ~/termux-env/bin ~/

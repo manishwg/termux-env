@@ -19,7 +19,7 @@ fi
 
 cd ~/
 git clone https://github.com/manishwg/termux-env.git
-# chmod 775 ~/termux-env/setenv
-# ~/termux-env/setenv
+chmod 775 ~/termux-env/setenv
+~/termux-env/setenv
 
 cd $cwd     
