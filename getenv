@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+wget https://github.com/manishwg/termux-env/raw/master/termux-env
+
+chmod 755 ./termux-env
+
+./termux-env
