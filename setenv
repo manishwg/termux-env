@@ -23,7 +23,7 @@ chmod 775 ~/termux-env/bin/*
 
 if [ -d ~/bin ]; then
 	echo removing old 'bin' dir
-	rm -rf ~/.bash_aliases
+	rm -rf ~/bin
 fi
 if [ -L ~/bin ]; then
 	echo removing old 'bin' link
