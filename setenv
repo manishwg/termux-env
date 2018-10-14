@@ -18,6 +18,6 @@ ln -v ~/termux-env/.bash_aliases ~/
 
 
 
-chmod 664 ~/termux-env/bin
+chmod 774 ~/termux-env/bin
 chmod 775 ~/termux-env/bin/*
 ln -sv ~/termux-env/bin ~/
