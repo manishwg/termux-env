@@ -1,5 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+termux-wake-lock
+
 if [ -e ~/.bashrc ]; then
 	echo removing old '.bashrc'
 	rm -rf ~/.bashrc
@@ -70,3 +72,5 @@ cwd2=$(pwd)
 cd ~
 ln -sv ./termux-env/bin ~/
 cd $cwd2
+
+termux-wake-unlock
