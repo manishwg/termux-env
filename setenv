@@ -1,5 +1,14 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+
+assert_not_root() {
+  if [ $(id -u) -eq 0 ]
+  then
+    echo "This must NOT be run as root as it will break your environment (root will be required for nearly everything due to changed file permissions)"
+    exit 1
+  fi
+}
+assert_not_root
 termux-wake-lock
 
 if [ -e ~/.bashrc ]; then
@@ -19,7 +28,8 @@ ln -sv ~/termux-env/.bash_aliases ~/
 
 
 echo -e "\n #### upgrading installed packages..."
-pkg upgrade
+apt update
+apt full-upgrade
 
 # Base pkg
 echo -e "\n #### installing python python-dev...\n"
