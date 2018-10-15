@@ -13,13 +13,18 @@ fi
 ln -sv ~/termux-env/.bashrc ~/
 ln -sv ~/termux-env/.bash_aliases ~/
 
-echo -e "\n"
+
+
+
+echo -e "\n #### upgrading installed packages..."
+pkg upgrade
 
 # Base pkg
+echo -e "\n #### installing python python-dev...\n"
 apt install -y python python-dev
-echo -e "\n"
+echo -e "\n #### installing clang...\n"
 apt install -y clang
-echo -e "\n"
+echo -e "\n #### installing ncurses-utils...\n"
 apt install -y ncurses-utils # sudo dependancy
 echo -e "\n"
 pip install --upgrade pip
