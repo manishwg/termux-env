@@ -31,15 +31,13 @@ apt install -y libxml2 libxml2-dev
 apt install -y libxslt libxslt-dev
 pip install --upgrade lxml
 pip install --upgrade requests
-pip install --upgrade muatagen
+pip install --upgrade mutagen
  
 
 
 
 if [ -f ~/termux-env/mp4box/$(uname -m) ]; then
 	ln -sv ~/termux-env/mp4box/$(uname -m) ~/termux-env/bin/mp4box
-else
-	
 fi
 
 chmod 774 ~/termux-env/bin
