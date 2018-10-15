@@ -13,25 +13,37 @@ fi
 ln -sv ~/termux-env/.bashrc ~/
 ln -sv ~/termux-env/.bash_aliases ~/
 
-
+echo -e "\n"
 
 # Base pkg
 apt install -y python python-dev
+echo -e "\n"
 apt install -y clang
+echo -e "\n"
 apt install -y ncurses-utils # sudo dependancy
+echo -e "\n"
 pip install --upgrade pip
+echo -e "\n"
 
 # ytdl
 pip install --upgrade youtube-dl
+echo -e "\n"
 apt install -y ffmpeg
+echo -e "\n"
 apt install -y atomicparsley
+echo -e "\n"
 
 # saavn
 apt install -y libxml2 libxml2-dev 
+echo -e "\n"
 apt install -y libxslt libxslt-dev
+echo -e "\n"
 pip install --upgrade lxml
+echo -e "\n"
 pip install --upgrade requests
+echo -e "\n"
 pip install --upgrade mutagen
+echo -e "\n"
  
 
 
