@@ -1,36 +1,57 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-if [ -f ~/.bashrc ]; then
+if [ -e ~/.bashrc ]; then
 	echo removing old '.bashrc'
 	rm -rf ~/.bashrc
 fi
 
-if [ -f ~/.bash_aliases ]; then
+if [ -e ~/.bash_aliases ]; then
 	echo removing old '.bash_aliases'
 	rm -rf ~/.bash_aliases
 fi
 
-ln -v ~/termux-env/.bashrc ~/
-ln -v ~/termux-env/.bash_aliases ~/
+ln -sv ~/termux-env/.bashrc ~/
+ln -sv ~/termux-env/.bash_aliases ~/
 
 
 
+# Base pkg
+apt install -y python python-dev
+apt install -y clang
+apt install -y ncurses-utils # sudo dependancy
+pip install --upgrade pip
+
+# ytdl
+pip install --upgrade youtube-dl
+apt install -y ffmpeg
+apt install -y atomicparsley
+
+# saavn
+apt install -y libxml2 libxml2-dev 
+apt install -y libxslt libxslt-dev
+pip install --upgrade lxml
+pip install --upgrade requests
+pip install --upgrade muatagen
+ 
 
 
+
+if [ -f ~/termux-env/mp4box/$(uname -m) ]; then
+	ln -sv ~/termux-env/mp4box/$(uname -m) ~/termux-env/bin/mp4box
+else
+	
+fi
 
 chmod 774 ~/termux-env/bin
 chmod 775 ~/termux-env/bin/*
 
-if [ -d ~/bin ]; then
-	echo removing old 'bin' dir
+if [[ -L ~/bin && -d ~/bin ]]
+then
+	echo removing previous '~/bin'
 	rm -rf ~/bin
 fi
-if [ -L ~/bin ]; then
-	echo removing old 'bin' link
-	rm -f ~/bin
-fi
 
-cwd=$(pwd)
+cwd2=$(pwd)
 cd ~
 ln -sv ./termux-env/bin ~/
-cd $cwd
+cd $cwd2

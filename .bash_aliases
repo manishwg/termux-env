@@ -1,5 +1,8 @@
+alias l='ls'
+alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -al'
+
 alias cl='clear'
 
 ######################################### APT #######################################
@@ -26,8 +29,8 @@ alias pki='pkg install'
 alias pkir='pkg reinstall'
 alias pkr='pkg uninstall'
 alias pks='pkg search'
-alias pksho='pkg show'
-alias pkls='pkg list-all'
+alias pksh='pkg show'
+alias pkls='pkg list'
 alias pklsa='pkg list-all'
 alias pkug='pkg upgrade'
 alias pkfls='pkg files' #This command will list files in package <package_name>.
@@ -35,7 +38,16 @@ alias pkfls='pkg files' #This command will list files in package <package_name>.
 
 
 ######################################### PIP #######################################
-alias pi='pip install'
+alias ppi='pip install'
+alias ppiu='pip install --upgrade'
+alias ppr='pip uninstall'
+alias pps='pip search'
+alias ppck='pip check'
+
+alias ppls='pip list'
+alias pplsu='pip list -o'
+alias ppsh='pip list shoe'
+
 
 
 
