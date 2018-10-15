@@ -1,3 +1,3 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-sudo youtube-dl --no-playlist --no-part --write-sub --sub-lang en --merge-output-format mp4 -f "bestvideo[ext=mp4][height<=480]+bestaudio[ext=m4a]/best[ext=mp4][height<=480]/22" -o "/storage/1E7B-1513/[YT]/%(title)s [%(height)d] {%(id)s}.%(ext)s" $*
+sudo youtube-dl --no-playlist --no-part --write-sub --sub-lang en --merge-output-format mp4 -f "best[ext=mp4][height>360][height<720]/bestvideo[ext=mp4][height<=480]+bestaudio[ext=m4a]/22" -o "/storage/1E7B-1513/[YT]/%(title)s [%(height)d] {%(id)s}.%(ext)s" $*
