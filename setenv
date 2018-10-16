@@ -72,7 +72,7 @@ fi
 
 devicemodel=$(getprop ro.product.model)
 # echo $devicemodel
-if [ -e ~/termux-env/patches/$devicemodel ]; then
+if [ -e "~/termux-env/patches/$devicemodel" ]; then
 	echo -e "\n #### patching ~/termux-env/patches/$devicemodel"
 	bash ~/termux-env/patches/$devicemodel
 else
