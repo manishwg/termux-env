@@ -27,41 +27,41 @@ ln -sv ~/termux-env/.bash_aliases ~/
 
 
 
-echo -e "\n #### upgrading installed packages..."
-apt update
-apt full-upgrade -y
+# echo -e "\n #### upgrading installed packages..."
+# apt update
+# apt full-upgrade -y
 
-echo -e "\n"
-# Base pkg
-echo -e "\n #### installing python python-dev..."
-apt install -y python python-dev
-echo -e "\n #### installing clang..."
-apt install -y clang
-echo -e "\n #### installing ncurses-utils..."
-apt install -y ncurses-utils # sudo dependancy
-echo -e "\n #### upgrading pip..."
-pip install --upgrade pip
-echo -e "\n"
+# echo -e "\n"
+# # Base pkg
+# echo -e "\n #### installing python python-dev..."
+# apt install -y python python-dev
+# echo -e "\n #### installing clang..."
+# apt install -y clang
+# echo -e "\n #### installing ncurses-utils..."
+# apt install -y ncurses-utils # sudo dependancy
+# echo -e "\n #### upgrading pip..."
+# pip install --upgrade pip
+# echo -e "\n"
 
-# ytdl
-pip install --upgrade youtube-dl
-echo -e "\n"
-apt install -y ffmpeg
-echo -e "\n"
-apt install -y atomicparsley
-echo -e "\n"
+# # ytdl
+# pip install --upgrade youtube-dl
+# echo -e "\n"
+# apt install -y ffmpeg
+# echo -e "\n"
+# apt install -y atomicparsley
+# echo -e "\n"
 
-# saavn
-apt install -y libxml2 libxml2-dev 
-echo -e "\n"
-apt install -y libxslt libxslt-dev
-echo -e "\n"
-pip install --upgrade lxml
-echo -e "\n"
-pip install --upgrade requests
-echo -e "\n"
-pip install --upgrade mutagen
-echo -e "\n"
+# # saavn
+# apt install -y libxml2 libxml2-dev 
+# echo -e "\n"
+# apt install -y libxslt libxslt-dev
+# echo -e "\n"
+# pip install --upgrade lxml
+# echo -e "\n"
+# pip install --upgrade requests
+# echo -e "\n"
+# pip install --upgrade mutagen
+# echo -e "\n"
  
 
 
@@ -70,10 +70,11 @@ if [ -f ~/termux-env/mp4box/$(uname -m) ]; then
 	ln -sv ~/termux-env/mp4box/$(uname -m) ~/termux-env/bin/mp4box
 fi
 
-devicemodel = $(getprop ro.product.model)
+devicemodel=$(getprop ro.product.model)
 echo $devicemodel
 if [ -e ~/termux-env/patches/$devicemodel ]; then
-	bash ~/termux-env/patches/devicemodel
+	echo "patching ~/termux-env/patches/$devicemodel"
+	bash ~/termux-env/patches/$devicemodel
 else
 	ln -sv ~/termux-env/topatch/bin/* ~/termux-env/bin/
 fi
