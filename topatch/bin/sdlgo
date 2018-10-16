@@ -83,7 +83,7 @@ def get_cached_songs_data():
 
 	json_acceptable_string = ''
 	for row in result:
-		print(row[0])
+		# print(row[0])
 		# print(row[3])
 		json_acceptable_string = row[3].replace('\'', '\\u0027')
 		json_acceptable_string = json_acceptable_string.replace('&#039;', '\\u0027')

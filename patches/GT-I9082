@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+mainstorage = /mnt/expand/d54f545e-299a-4e9e-9c06-98777b59c5fc
+
+if [ -e ~/termux-env/bin/sdlgo ]; then
+	echo removing old 'sdlgos'
+	rm -rf ~/termux-env/bin/sdlgo
+fi
+
+sed -e 's:^([\s]*)(sourcePath = \')/data:\1\2$mainstorage:g' ~/termux-env/topatch/bin/sdlgo >~/termux-env/bin/sdlgo

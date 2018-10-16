@@ -2,11 +2,11 @@
 
 
 assert_not_root() {
-  if [ $(id -u) -eq 0 ]
-  then
-    echo "This must NOT be run as root as it will break your environment (root will be required for nearly everything due to changed file permissions)"
-    exit 1
-  fi
+	if [ $(id -u) -eq 0 ]
+	then
+		echo "This must NOT be run as root as it will break your environment (root will be required for nearly everything due to changed file permissions)"
+		exit 1
+	fi
 }
 assert_not_root
 termux-wake-lock
@@ -29,16 +29,17 @@ ln -sv ~/termux-env/.bash_aliases ~/
 
 echo -e "\n #### upgrading installed packages..."
 apt update
-apt full-upgrade
+apt full-upgrade -y
 
-# Base pkg
-echo -e "\n #### installing python python-dev...\n"
-apt install -y python python-dev
-echo -e "\n #### installing clang...\n"
-apt install -y clang
-echo -e "\n #### installing ncurses-utils...\n"
-apt install -y ncurses-utils # sudo dependancy
 echo -e "\n"
+# Base pkg
+echo -e "\n #### installing python python-dev..."
+apt install -y python python-dev
+echo -e "\n #### installing clang..."
+apt install -y clang
+echo -e "\n #### installing ncurses-utils..."
+apt install -y ncurses-utils # sudo dependancy
+echo -e "\n #### upgrading pip..."
 pip install --upgrade pip
 echo -e "\n"
 
@@ -68,6 +69,14 @@ echo -e "\n"
 if [ -f ~/termux-env/mp4box/$(uname -m) ]; then
 	ln -sv ~/termux-env/mp4box/$(uname -m) ~/termux-env/bin/mp4box
 fi
+
+if [ -f ~/patches/$(getprop ro.product.model) ]; then
+	bash ~/patches/$(getprop ro.product.model)
+else
+	ln -sv ~/termux-env/topatch/bin/* ~/termux-env/bin/
+fi
+
+
 
 chmod 774 ~/termux-env/bin
 chmod 775 ~/termux-env/bin/*
