@@ -71,7 +71,7 @@ if [ -f ~/termux-env/mp4box/$(uname -m) ]; then
 fi
 
 devicemodel=$(getprop ro.product.model)
-devicemodel=$(echo $devicemodel | sed -e "s: :\ :g")
+devicemodel=$(echo $devicemodel | sed -e "s: :\\ :g")
 echo $devicemodel
 if [ -e ~/termux-env/patches/$devicemodel ]; then
 	echo -e "\n #### patching ~/termux-env/patches/$devicemodel"
