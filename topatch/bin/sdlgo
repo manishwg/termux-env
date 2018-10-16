@@ -24,7 +24,6 @@ from lxml import html
 
 # define the path
 
-# sourcePath = '/mnt/expand/d54f545e-299a-4e9e-9c06-98777b59c5fc/media/0/sdl.tmp'
 sourcePath = '/data/media/0/sdl.tmp'
 destinationPath = '/storage/emulated/0/saavn.dl'
 cachedSongdb = '/data/data/com.saavn.android/databases/cachedSong.db'
