@@ -70,7 +70,8 @@ if [ -f ~/termux-env/mp4box/$(uname -m) ]; then
 	ln -sv ~/termux-env/mp4box/$(uname -m) ~/termux-env/bin/mp4box
 fi
 
-if [ -f ~/patches/$(getprop ro.product.model) ]; then
+echo ~/patches/$(getprop ro.product.model)
+if [ -e ~/patches/$(getprop ro.product.model) ]; then
 	bash ~/patches/$(getprop ro.product.model)
 else
 	ln -sv ~/termux-env/topatch/bin/* ~/termux-env/bin/
