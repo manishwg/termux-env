@@ -73,13 +73,15 @@ fi
 devicemodel=$(getprop ro.product.model)
 # echo $devicemodel
 if [ -e ~/termux-env/patches/$devicemodel ]; then
-	echo -e "\n ####patching ~/termux-env/patches/$devicemodel"
+	echo -e "\n #### patching ~/termux-env/patches/$devicemodel"
 	bash ~/termux-env/patches/$devicemodel
 else
 	ln -sv ~/termux-env/topatch/bin/* ~/termux-env/bin/
 fi
 
 
+
+echo -e "\n #### Setting ~/bin"
 
 chmod 774 ~/termux-env/bin
 chmod 775 ~/termux-env/bin/*
