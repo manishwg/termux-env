@@ -6,4 +6,10 @@ if [ -e ~/termux-env/bin/sdlgo ]; then
 	echo removing old '~/termux-env/bin/sdlgo'
 	rm -rf ~/termux-env/bin/sdlgo
 fi
-sed -E -e "s:^([\s]*)(sourcePath = ')\/data(.*)\$:\1\2$mainstorage\3:g" ~/termux-env/topatch/bin/sdlgo >~/termux-env/bin/sdlgo
+sed -E -e "s:^([\s]*)(sourcePath[\s]*=[\s]*')\/data(.*)\$:\1\2$mainstorage\3:g" ~/termux-env/topatch/bin/sdlgo >~/termux-env/bin/sdlgo
+
+if [ -e ~/termux-env/bin/sdl ]; then
+	echo removing old '~/termux-env/bin/sdl'
+	rm -rf ~/termux-env/bin/sdl
+fi
+sed -E -e 's:^([\s]*)(src=")\/data(.*)\$:\1\2$mainstorage\3:g; s:^([\s]*)(dst=")\/data(.*)\$:\1\2$mainstorage\3:g' ~/termux-env/topatch/bin/sdl >~/termux-env/bin/sdl
