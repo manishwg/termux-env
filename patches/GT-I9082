@@ -7,4 +7,4 @@ if [ -e ~/termux-env/bin/sdlgo ]; then
 	rm -rf ~/termux-env/bin/sdlgo
 fi
 echo -e "s:^([\s]*)(sourcePath = ')\/data:\1\2$mainstorage:g"
-sed -E -e "s/^([\s]*)(sourcePath = ')\/data:\1\2\/mnt\/expand\/d54f545e-299a-4e9e-9c06-98777b59c5fc" ~/termux-env/topatch/bin/sdlgo >~/termux-env/bin/sdlgo
+sed -E -e "s:^([\s]*)(sourcePath = ')\/data:\1\2\/mnt\/expand\/d54f545e-299a-4e9e-9c06-98777b59c5fc:g" ~/termux-env/topatch/bin/sdlgo >~/termux-env/bin/sdlgo
