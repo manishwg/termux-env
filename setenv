@@ -73,17 +73,11 @@ if [ -f ~/termux-env/mp4box/$(uname -m) ]; then
 else
 	echo -e "\n #### No prebuid mp4box, trying to build..."
 	cwd2=$(pwd)
-	cd ~/
-	git clone https://github.com/manishwg/gpac.git
-	cd gpac
-	chmod 775 ./configure
-	chmod 775 ./check_revision.sh
-	./configure --static-mp4box --use-zlib=no
-	make -j4
+	bash ~/termux-env/build_mp4box
 	cd $cwd2
 	if [ -f ~/gpac/bin/gcc/MP4Box ]; then
 		echo -e "\n #### Build OK, Linking mp4box..."
-		mv -f ~/gpac/bin/gcc/MP4Box ~/termux-env/mp4box/$(uname -m)
+		mv -fv ~/gpac/bin/gcc/MP4Box ~/termux-env/mp4box/$(uname -m)
 		ln -sv ~/termux-env/mp4box/$(uname -m) ~/termux-env/bin/mp4box
 	fi
 
