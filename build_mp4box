@@ -1,9 +1,16 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-	cd ~/
-	git clone https://github.com/manishwg/gpac.git
-	cd gpac
-	chmod 775 ./configure
-	chmod 775 ./check_revision.sh
-	./configure --static-mp4box --use-zlib=no
-	make -j4
+cd ~/
+
+if [ -d ~/gpac ]; then
+	echo removing old 'gpac' dir
+	rm -rf ~/gpac
+fi
+
+
+git clone https://github.com/manishwg/gpac.git
+cd gpac
+chmod 775 ./configure
+chmod 775 ./check_revision.sh
+./configure --static-mp4box --use-zlib=no
+make -j4
