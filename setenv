@@ -76,6 +76,7 @@ else
 	cd ~/
 	git clone https://github.com/manishwg/gpac.git
 	cd gpac
+	chmod 775 ./configure
 	./configure --static-mp4box --use-zlib=no
 	make -j4
 	cd $cwd2
