@@ -16,4 +16,6 @@ if [ -e ~/termux-env/bin/sdl ]; then
 	echo removing old '~/termux-env/bin/sdl'
 	rm -rf ~/termux-env/bin/sdl
 fi
-sed -E -e "s:^([\t ]*src=\")\/data(.*)\$:\1$mainstorage\2:g; s:^([\t ]*dst=\")\/data(.*)\$:\1$mainstorage\2:g" ~/termux-env/topatch/bin/sdl >~/termux-env/bin/sdl
+pattern1="^([\t ]*(src|dst)=')\/data(.*)\$"
+rep1="\1$mainstorage\3"
+sed -E -e "s:${pattern1}:${rep1}:g;" ~/termux-env/topatch/bin/sdl >~/termux-env/bin/sdl

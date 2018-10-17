@@ -11,6 +11,7 @@ assert_not_root() {
 assert_not_root
 termux-wake-lock
 
+echo -e "\n #### Setting '.bashrc' and  'bash_aliases'"
 if [ -e ~/.bashrc ]; then
 	echo removing old '.bashrc'
 	rm -rf ~/.bashrc
@@ -24,6 +25,7 @@ fi
 ln -sv ~/termux-env/.bashrc ~/
 ln -sv ~/termux-env/.bash_aliases ~/
 
+source ~/.bashrc
 
 
 
@@ -68,6 +70,11 @@ ln -sv ~/termux-env/.bash_aliases ~/
 
 if [ -f ~/termux-env/mp4box/$(uname -m) ]; then
 	ln -sv ~/termux-env/mp4box/$(uname -m) ~/termux-env/bin/mp4box
+# else
+	# git clone https://github.com/gpac/gpac.git
+	# cd gpac
+	# ./configure --static-mp4box --use-zlib=no
+	# make -j4
 fi
 
 devicemodel=$(getprop ro.product.model)

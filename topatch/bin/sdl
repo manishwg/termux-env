@@ -1,8 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-src="/data/media/0/Android/data/com.saavn.android/files/songs_temp/"
-dst="/data/media/0/sdl.tmp/"
-nop=""
+src='/data/media/0/Android/data/com.saavn.android/files/songs_temp/'
+dst='/data/media/0/sdl.tmp/'
+nop=''
 
 echo ${src}
 echo ${dst}
