@@ -29,52 +29,54 @@ source ~/.bashrc
 
 
 
-# echo -e "\n #### upgrading installed packages..."
-# apt update
-# apt full-upgrade -y
+echo -e "\n #### upgrading installed packages..."
+apt update
+apt full-upgrade -y
 
-# echo -e "\n"
-# # Base pkg
-# echo -e "\n #### installing python python-dev..."
-# apt install -y python python-dev
-# echo -e "\n #### installing clang..."
-# apt install -y clang
-# echo -e "\n #### installing ncurses-utils..."
-# apt install -y ncurses-utils # sudo dependancy
-# echo -e "\n #### upgrading pip..."
-# pip install --upgrade pip
-# echo -e "\n"
+echo -e "\n"
 
-# # ytdl
-# pip install --upgrade youtube-dl
-# echo -e "\n"
-# apt install -y ffmpeg
-# echo -e "\n"
-# apt install -y atomicparsley
-# echo -e "\n"
+# Base pkg
+echo -e "\n #### installing python python-dev..."
+apt install -y python python-dev
+echo -e "\n #### installing clang n make..."
+apt install -y clang make
+echo -e "\n #### installing ncurses-utils..."
+apt install -y ncurses-utils # sudo dependancy
+echo -e "\n #### upgrading pip..."
+pip install --upgrade pip
+echo -e "\n"
 
-# # saavn
-# apt install -y libxml2 libxml2-dev 
-# echo -e "\n"
-# apt install -y libxslt libxslt-dev
-# echo -e "\n"
-# pip install --upgrade lxml
-# echo -e "\n"
-# pip install --upgrade requests
-# echo -e "\n"
-# pip install --upgrade mutagen
-# echo -e "\n"
+# ytdl
+echo -e "\n #### installing youtube-dl..."
+pip install --upgrade youtube-dl
+echo -e "\n #### installing ffmpeg n atomicparsley..."
+apt install -y ffmpeg atomicparsley
+echo -e "\n"
+
+# saavn
+echo -e "\n #### installing pip lxml dependencies..."
+apt install -y libxml2 libxml2-dev libxslt libxslt-dev
+echo -e "\n #### installing pip module 'lxml'..."
+pip install --upgrade lxml
+echo -e "\n #### installing pip module 'requests'..."
+pip install --upgrade requests
+echo -e "\n #### installing pip module 'mutagen'..."
+pip install --upgrade mutagen
+echo -e "\n"
  
 
 
 
 if [ -f ~/termux-env/mp4box/$(uname -m) ]; then
 	ln -sv ~/termux-env/mp4box/$(uname -m) ~/termux-env/bin/mp4box
-# else
-	# git clone https://github.com/gpac/gpac.git
-	# cd gpac
-	# ./configure --static-mp4box --use-zlib=no
-	# make -j4
+else
+	cwd2=$(pwd)
+	cd ~/
+	git clone https://github.com/manishwg/gpac.git
+	cd gpac
+	./configure --static-mp4box --use-zlib=no
+	make -j4
+	cd $cwd2
 fi
 
 devicemodel=$(getprop ro.product.model)
