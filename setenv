@@ -32,8 +32,8 @@ source ~/.bashrc
 echo -e "\n #### upgrading installed packages..."
 apt update
 apt full-upgrade -y
-
 echo -e "\n"
+
 
 # Base pkg
 echo -e "\n #### installing python python-dev..."
@@ -57,17 +57,21 @@ echo -e "\n"
 echo -e "\n #### installing pip lxml dependencies..."
 apt install -y libxml2 libxml2-dev libxslt libxslt-dev
 echo -e "\n #### installing pip module 'lxml'..."
-pip install --upgrade lxml
+pip install lxml
 echo -e "\n #### installing pip module 'requests'..."
-pip install --upgrade requests
+pip install requests
 echo -e "\n #### installing pip module 'mutagen'..."
-pip install --upgrade mutagen
+pip install mutagen
 echo -e "\n"
  
 
 
 
 echo -e "\n #### Setting mp4box..."
+if [ -e ~/termux-env/bin/mp4box ]; then
+	echo removing '~/termux-env/bin/mp4box'
+	rm -rf ~/termux-env/bin/mp4box
+fi
 if [ -f ~/termux-env/mp4box/$(uname -m) ]; then
 	echo -e "\n #### Linking prebuid mp4box..."
 	ln -sv ~/termux-env/mp4box/$(uname -m) ~/termux-env/bin/mp4box

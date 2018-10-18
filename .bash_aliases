@@ -54,7 +54,7 @@ alias ppsh='pip list shoe'
 ############################################### youtube-dl #########################################
 
 alias y='youtube-dl'
-alias yu='youtube-dl -U'
+alias ytu='pip install --upgrade youtube-dl'
 # alias yt="sudo youtube-dl --prefer-ffmpeg --no-playlist --write-auto-sub --convert-subs srt --embed-subs -f 'best[ext=mp4][height<=480]/bestvideo[ext=mp4][height<=480]+bestaudio[ext=m4a]/22' --merge-output-format mp4 -o '~/Videos/%(title)s.%(ext)s'"
 
 
