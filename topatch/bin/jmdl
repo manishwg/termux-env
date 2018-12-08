@@ -15,7 +15,20 @@ do
     do
         if [ "${i}" != "*" ]
         then
-            if [ ! -f ${dst}${i} ]
+            if [ ! -d ${dst}${i} ]
+            then
+			    for j in ${i}/*
+			    do
+			        if [ "${j}" != "*" ]
+			        then
+			            if [ ! -f ${dst}${j} ]
+			            then
+			                busybox ln ${src}${j} ${dst}${j}
+			                echo ${j} -- ${i}
+			            fi
+			        fi
+			    done
+            elif [ ! -f ${dst}${i}/${i} ]
             then
                 busybox ln ${src}${i} ${dst}${i}
                 echo ${i}

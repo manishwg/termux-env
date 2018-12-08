@@ -19,3 +19,11 @@ fi
 pattern1="^([\t ]*(src|dst)=')\/data(.*)\$"
 rep1="\1$mainstorage\3"
 sed -E -e "s:${pattern1}:${rep1}:g;" ~/termux-env/topatch/bin/sdl >~/termux-env/bin/sdl
+
+if [ -e ~/termux-env/bin/jmdl ]; then
+	echo removing old '~/termux-env/bin/sdl'
+	rm -rf ~/termux-env/bin/sdl
+fi
+pattern1="^([\t ]*(src|dst)=')\/data(.*)\$"
+rep1="\1$mainstorage\3"
+sed -E -e "s:${pattern1}:${rep1}:g;" ~/termux-env/topatch/bin/jmdl >~/termux-env/bin/jmdl
