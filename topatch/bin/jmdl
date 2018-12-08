@@ -19,7 +19,7 @@ do
             then
 			    for j in ${i}/*
 			    do
-			        if [ "${j}" != "*" ]
+			        if [ "${j}" != "${i}/*" ]
 			        then
 			            if [ ! -f ${dst}${j} ]
 			            then
