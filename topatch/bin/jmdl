@@ -17,22 +17,24 @@ do
         then
             if [ ! -d ${dst}${i} ]
             then
-			    for j in ${i}/*
+	        	cd ${i}
+			    for j in *
 			    do
-			        if [ "${j}" != "${i}/*" ]
+			        if [ "${j}" != "*" ]
 			        then
-			            if [ ! -d ${dst}${i} ]
-			            then
-			            	mkdir ${dst}${i}
-			            fi
+			            # if [ ! -d ${dst}${i} ]
+			            # then
+			            # 	mkdir ${dst}${i}
+			            # fi
 
 			            if [ ! -f ${dst}${j} ]
 			            then
-			                busybox ln ${src}${j} ${dst}${j}
-			                echo ${j} -- ${i}
+			                echo ${j} ${i}
+			                busybox ln ${src}${j}/${j} ${dst}${j}
 			            fi
 			        fi
 			    done
+			    cd ..
             elif [ ! -f ${dst}${i}/${i} ]
             then
                 busybox ln ${src}${i} ${dst}${i}
