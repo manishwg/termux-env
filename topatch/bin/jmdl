@@ -21,6 +21,11 @@ do
 			    do
 			        if [ "${j}" != "${i}/*" ]
 			        then
+			            if [ ! -d ${dst}${i} ]
+			            then
+			            	mkdir ${dst}${i}
+			            fi
+
 			            if [ ! -f ${dst}${j} ]
 			            then
 			                busybox ln ${src}${j} ${dst}${j}
