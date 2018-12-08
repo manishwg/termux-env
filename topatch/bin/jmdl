@@ -30,7 +30,7 @@ do
 			            if [ ! -f ${dst}${j} ]
 			            then
 			                echo ${j} ${i}
-			                busybox ln ${src}${j}/${j} ${dst}${j}
+			                busybox ln ${src}${i}/${j} ${dst}${j}
 			            fi
 			        fi
 			    done
