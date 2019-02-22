@@ -1,0 +1,26 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+src='/data/media/0/Android/data/com.jio.media.jiobeats/files/songs_temp/'
+dst='/data/media/0/jsdl.tmp/'
+nop=''
+
+
+echo ${src}
+echo ${dst}
+
+cd ${src}
+
+while true
+do
+    for i in *
+    do
+        if [ "${i}" != "*" ]
+        then
+            if [ ! -f ${dst}${i} ]
+            then
+                busybox ln ${src}${i} ${dst}${i}
+                echo ${i}
+            fi
+        fi
+    done
+done
