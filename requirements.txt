@@ -1,0 +1,12 @@
+# ytdl
+youtube-dl
+atomicparsley
+
+# saavn
+echo -e "\n #### installing pip module 'lxml'..."
+pip install lxml
+echo -e "\n #### installing pip module 'requests'..."
+pip install requests
+echo -e "\n #### installing pip module 'mutagen'..."
+pip install mutagen
+echo -e "\n"
