@@ -36,8 +36,8 @@ echo -e "\n"
 
 
 # Base pkg
-echo -e "\n #### installing python python-dev..."
-apt install -y python python-dev
+echo -e "\n #### installing python..."
+apt install -y python
 echo -e "\n #### installing clang n build-essentials..."
 apt install -y build-essential clang make diffutils m4 patch
 echo -e "\n #### installing ncurses-utils..."
