@@ -46,6 +46,11 @@ echo -e "\n #### upgrading pip..."
 pip install --upgrade pip
 echo -e "\n"
 
+# youtube-dl
+echo -e "\n #### installing ffmpeg n atomicparsley..."
+apt install -y ffmpeg atomicparsley
+echo -e "\n"
+
 # saavn
 echo -e "\n #### installing pip lxml dependencies..."
 apt install -y libxml2 libxslt 

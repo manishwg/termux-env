@@ -1,8 +1,7 @@
-# ytdl
-youtube-dl
-atomicparsley
-
 # saavn
 lxml
 requests
 mutagen
+
+# ytdl
+youtube-dl
