@@ -47,15 +47,3 @@ alias ppck='pip check'
 alias ppls='pip list'
 alias pplsu='pip list -o'
 alias ppsh='pip list shoe'
-
-
-
-
-############################################### youtube-dl #########################################
-
-alias y='youtube-dl'
-alias ytu='pip install --upgrade youtube-dl'
-# alias yt="sudo youtube-dl --prefer-ffmpeg --no-playlist --write-auto-sub --convert-subs srt --embed-subs -f 'best[ext=mp4][height<=480]/bestvideo[ext=mp4][height<=480]+bestaudio[ext=m4a]/22' --merge-output-format mp4 -o '~/Videos/%(title)s.%(ext)s'"
-
-
-# alias ytl="sudo youtube-dl --yes-playlist --no-part --write-sub --sub-lang en --merge-output-format mp4 -f 'best[ext=mp4][height<=480]/bestvideo[ext=mp4][height<=480]+bestaudio[ext=m4a]/22' -o '/storage/emulated/0/[YTL]/%(title)s [%(height)d] {%(id)s}.%(ext)s' https://www.youtube.com/playlist?list=PLAjeEoHW9hredqsq0Ffs6kB7pvmhSoSR4"
