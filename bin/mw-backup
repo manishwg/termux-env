@@ -1,4 +1,4 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
 MIP=${1:-192.168.0.2}
-rsync -av --exclude 'M' /sdcard/ mw@$MIP:/opt/backup/note9_sync
+rsync -av --exclude 'M' /sdcard/ mw@$MIP:/opt/phone_sync/note9-internal
